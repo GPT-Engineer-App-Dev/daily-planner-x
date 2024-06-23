@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Container, VStack, HStack, Input, Button, Text, IconButton, Box } from "@chakra-ui/react";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { Container, VStack, HStack, Input, Button, Text, IconButton, Box, Flex, Link } from "@chakra-ui/react";
+import { FaEdit, FaTrash, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Index = () => {
   const [tasks, setTasks] = useState([]);
@@ -78,6 +78,22 @@ const Index = () => {
           ))}
         </VStack>
       </VStack>
+      <Box as="footer" width="100%" py={4} mt={10} borderTop="1px" borderColor="gray.200">
+        <Flex justify="space-between" align="center">
+          <Text>&copy; {new Date().getFullYear()} My Todo App. All rights reserved.</Text>
+          <HStack spacing={4}>
+            <Link href="https://twitter.com" isExternal>
+              <IconButton icon={<FaTwitter />} aria-label="Twitter" />
+            </Link>
+            <Link href="https://github.com" isExternal>
+              <IconButton icon={<FaGithub />} aria-label="GitHub" />
+            </Link>
+            <Link href="https://linkedin.com" isExternal>
+              <IconButton icon={<FaLinkedin />} aria-label="LinkedIn" />
+            </Link>
+          </HStack>
+        </Flex>
+      </Box>
     </Container>
   );
 };
