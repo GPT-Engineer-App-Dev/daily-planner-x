@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, VStack, HStack, Input, Button, Text, IconButton, Box, Flex, Link, Heading } from "@chakra-ui/react";
 import { FaEdit, FaTrash, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link as RouterLink } from "react-router-dom";
 
 const Index = () => {
   const [tasks, setTasks] = useState([]);
@@ -85,6 +86,9 @@ const Index = () => {
         <Flex justify="space-between" align="center">
           <Text>&copy; {new Date().getFullYear()} My Todo App. All rights reserved.</Text>
           <HStack spacing={4}>
+            <Link as={RouterLink} to="/about" color="teal.500">
+              About
+            </Link>
             <Link href="https://twitter.com" isExternal>
               <IconButton icon={<FaTwitter />} aria-label="Twitter" />
             </Link>
